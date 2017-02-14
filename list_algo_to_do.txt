@@ -1,0 +1,15 @@
+// sum matrix ; mult matrix
+	// power of number
+// reverse number from char
+// char to float
+// geometric progression serie
+	// factorial
+// sum of digit by recursion
+// perfect number
+	// armstrong nuber ? is : not ?
+// prime number
+// palindrome
+	// pascal triangle 
+// sum of number by reecursion
+
+
