@@ -3,28 +3,36 @@
 
 
 
-float * char2float ( char **clist )
+void char2float ( char **clist , float *flist)
 {
 	int ii=0, jj=0;
 	int fl = 0;
+	int flag = 0;
+	float vfl = 0.0;
 
-	int flist[5] ;
+//	int flist[5] ;
 	for(ii=0; ii < 5 ; ii++){		
 		for(jj=0; clist[ii][jj] != '\0' ; jj++){	
-			fl = fl*10 + (int)(clist[ii][jj] - '0') ;		
+			if(!flag && clist[ii][jj]!='.')
+				fl = fl*10 + (int)(clist[ii][jj] - '0') ;		
 			//printf("%s --> %d %x\n", clist[ii] , fl , clist[ii][jj]);
+			if(clist[ii][jj]=='.')
+			{
+				flag=1;
+			}else if(flag){
+				vfl = vfl/10.0f + (float)(clist[ii][jj] - '0')/10.0f ;
+			}
 		}
-		flist[ii]= fl;
-		fl=0;//jj++;
+		flist[ii]= fl+vfl;
+		fl=0;flag=0;vfl=0;
 	}
 
-	return flist;	
+	return ;	
 }
 
 int main(int argc , char *argv[])
 {
 	
-
 	int ii = 0, aa=0 , jj=0;
 	for(ii=0; argv[1][ii] != '\0'; ii++)	
 	{
@@ -33,17 +41,14 @@ int main(int argc , char *argv[])
 
 	printf("aa=%d\n",aa);
 
-	int *flist = (float*)malloc(aa*sizeof(float));
+	float *flist = (float*)malloc(aa*sizeof(float));
 
-	char *clist[]={"123","321", "123","321", "123"};
+	char *clist[]={"123.0","321.1", "123.2","321", "123"};
 	
 
-	//for(ii=0; ii < 5 ; ii++)		
-			//printf("%s\n", clist[ii]);
-
-	flist = char2float ( clist );
+	char2float ( clist , flist);
 	for(ii=0; ii < 5 ; ii++)		
-			printf("%d\n", flist[ii]);
+			printf("%.2f\n", flist[ii]);
 
 	return 0;	
 }

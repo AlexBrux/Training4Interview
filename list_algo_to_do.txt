@@ -1,7 +1,7 @@
 // sum matrix ; mult matrix
 	// power of number
 // reverse number from char
-// char to float
+	// char to float
 // geometric progression serie
 	// factorial
 // sum of digit by recursion
