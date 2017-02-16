@@ -11,15 +11,24 @@ void charReversed (  )
 	int size = 5;
 	char tmp = '0';
 
-	char clist[5][5]= {"abcd","efgh", "ijkl","mnop", "qrst"};
+	char clist[5][50]= {"abcd,","efgh,", "ijkl,","mnop,", "qrst,"};
 	
 	for(ii=0; ii < 5 ; ii++)
-		printf("%s\n", clist[ii]);
-				
+	{
+		while(*(clist[ii]+ jj )!=','){
+			printf("%c", clist[ii][jj++]);
+		}
+		jj=0;
+	}			
 				
 	for(ii = 0 ; ii < size ; ii++){
-		len = strlen ( clist[ii] );
-			//printf("%d\n", len );	
+	
+		while(*(clist[ii]+ jj )!=','){
+			printf("%c", clist[ii][jj++]);
+		}
+		len = jj ; jj=0;
+				
+	
 		while(jj  <  len/2 ){
 			tmp = clist[ii][jj] ; 
 			clist[ii][jj] = clist[ii][len-jj-1] ;
