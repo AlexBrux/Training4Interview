@@ -1,16 +1,16 @@
-// sum matrix ; mult matrix
-// reverse number from char
 // geometric progression serie
 // sum of digit by recursion
 // perfect number
 // prime number
 // sum of number by reecursion
 
+	// sum matrix ; mult matrix
+	// reverse number from char
 	// power of number
 	// palindrome
 	// pascal triangle 
 	// armstrong nuber ? is : not ?
 	// factorial
 	// char to float
-	//Largest Sum Contiguous Subarray
+	// Largest Sum Contiguous Subarray
 
